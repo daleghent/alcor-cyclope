@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alcor_cyclope"
+version = "0.1.0"
+description = "Client for interacting with the Alcor Cyclope seeing monitor TCP API"
+authors = [
+    { name = "Dale Ghent", email = "daleg@elemental.org" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+]
+dependencies = []
+
+[project.scripts]
+cyclope = "alcor_cyclope.cli:main"
+
+[tool.setuptools]
+packages = ["alcor_cyclope"]
+
+[tool.setuptools.package-data]
+alcor_cyclope = ["*.py"]
+
+[tool.setuptools.exclude-package-data]
+alcor_cyclope = ["tests/*"]
+
+[tool.setuptools_scm]
+
